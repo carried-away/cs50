@@ -38,21 +38,21 @@ def main():
     print(f'{grade}')
 
 
-def calculate_coleman_liau_index(num_chars, num_words, num_sentences):
+def calculate_coleman_liau_index(chars, words, sentences):
 
     # Coleman-Liau index
     # where L is the average number of letters per 100 words in the text
     # S is the average number of sentences per 100 words in the text
 
-    L = (num_chars / num_words) * 100
-    S = (num_sentences / num_words) * 100
+    L = (chars / words) * 100
+    S = (sentences / words) * 100
 
     # Compute the Coleman-Liau index
     # 0.0588 * L - 0.296 * S - 15.8
     coleman_liau_index = 0.0588 * L - 0.296 * S - 15.8
 
-    rounded_index = round(coleman_liau_index)
-    return rounded_index
+    result = round(coleman_liau_index)
+    return result
 
 
 main()
